@@ -1,0 +1,31 @@
+Edit runhydro.h in /flower according to /scf_zt_series/scf.h from the SCF code
+numr, numz and numphi
+oldnumr = dr_numr = numr_a from SCF (?) 
+
+Edit main.F90
+drag_factor = <Percentage angular momentum removed every orbit>
+if (time/cirp >= <Number of orbits the system is driven>
+
+>>make clean
+>>make
+
+in workdir,
+>>mkdir sim1
+>>cd sim1
+>>mkdir input output run
+>>cd input
+>>mkdir conts
+>>cd ../output
+>>mkdir conts data
+
+Put ang_mom, rad_mom, density in the /sim1/input dir
+Put hydro binary from /flower to /sim1
+Put fort.<number> from scf in /sim1/run
+Rename it fort.7
+
+Submit /sim1/hydro
+
+
+
+
+

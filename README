@@ -1,0 +1,126 @@
+
+files changed:
+
+setup_frac.F90, read in etot from continuation file                                     **
+
+scfin_frac.F90, initialized etot initial data and kappas                                **
+
+state.F90, compute pressure from p = (gamma-1) (E_tot - E_kin)                          **
+           E_tot = 1/2 rho v**2 + rho eps
+
+delta.F90, no changes - should be fine if the pressure is current as c_sound            **
+           calculated as gamma p / rho
+
+ritecont_frac.F90, ritecont_frac_new.F90, dump out etot in continuation file            **
+            also added temps to data written out
+
+advect_bc.F90, floor etot and have etot follow the same boundary conditions as rho
+
+advect_frac.F90, etot treated like rho
+
+bessel.F90, no change
+
+bm.F90, no change
+
+calc_com_coords.F90, no change
+
+com_val_acn.F90
+
+comm.F90, no chnage
+
+comm_dir.F90, no change
+
+comm_r_sweep.F90, no change
+
+comm_z_sweep.F90, no change
+
+debugin.F90, initialize etot
+
+diag_find_lpoints.F90, no change
+
+diag_find_rhomax.F90, no change
+
+diag_gwave.F90, no change
+
+diag_make_mask.F90, no change
+
+diag_momments.F90, no change
+
+diag_spins.F90, no change
+
+diag_write.1.F90, no change
+
+dodiag.1.F90, no change - thermal energy from pressure anyway
+
+drag.F90, need to redo etot to be consistent but not doing this in the first pass
+
+drag_bc.F90, when I fix drag will need to include bc's for etot here
+
+dsummer.F90, no change
+
+elle.F90, no change
+
+ellf.F90, no change
+
+flux.F90, no change
+
+flux_frac.F90, no change
+
+gammln.F90, no change
+
+helmadi.F90, no change
+
+initialize_frac.F90, zero out etot, replaced array syntax with explicit do loops
+
+main.F90, output file for etot, wipe out etot in zero out region
+
+make_source_temp.F90, no change
+
+make_source_temp_bc.F90, no change
+
+output_files.F90, added etot and pressure as last files written out
+
+output_kernel_pio.F90, no change
+
+potential_solver.F90, no change
+
+potsetup.F90, no change
+
+rd.F90, no change
+
+realft.F90, no change
+
+rf.F90, no change
+
+save_state.F90, added etot1 to save and changed array syntax to explicit do loops
+
+slope.F90, no change
+
+sm.F90, no change
+
+source.F90, aded etot source terms
+
+source_bc.F90, added in etot to model rho bc's from advect_bc
+
+stress.F90, no change
+
+swap_phi_r.F90, no change
+
+swap_r_phi.F90, no change
+
+swap_r_z.F90, no change
+
+swap_z_r.F90, no change
+
+tm.F90, no change
+
+tridagr.F90, no change
+
+tridagz.F90, no change
+
+vel.F90, should redefine the kinetic energy part of etot when the velocity is 
+         limited but not doing that on the first pass
+
+vel_bc.F90, no change because etot not changed in vel
+
+visc.F90, no change
